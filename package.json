@@ -1,6 +1,6 @@
 {
   "name": "monitors",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "description": "Make it Social status page",
   "main": "dist/js/monitors.min.js",
   "scripts": {
@@ -29,5 +29,6 @@
   },
   "jshintConfig": {
     "esnext": true
-  }
+  },
+  "dependencies": {}
 }
