@@ -30,5 +30,7 @@
   "jshintConfig": {
     "esnext": true
   },
-  "dependencies": {}
+  "dependencies": {
+    "angular": "^1.4.6"
+  }
 }
