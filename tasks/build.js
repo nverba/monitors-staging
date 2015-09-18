@@ -14,7 +14,7 @@ var preprocess = require('gulp-preprocess');
 gulp.task('build', function() {
   
   var bundleStream = browserify({ entries: 'src/js/monitors.js', debug: argv.development, transform: babelify.configure({
-    optional: ["utility.inlineEnvironmentVariables"]
+   
   })});
   var watchBundle  = argv.development ? watchify(bundleStream) : bundleStream; 
   
