@@ -1,9 +1,13 @@
 require('angular');
-require('../components/monitor-service/monitor-service.js');
+require('../components/uptimerobot/service.js');
 
-angular.module('monitors', ['uptimerobot']);
-angular.module('monitors').controller('main', ['fetchMonitors', mainController]);
+angular.module('monitors', ['uptimeRobotService']);
+angular.module('monitors').controller('main', ['uptimeRobotSync', mainController]);
 
 function mainController() {
+
+	console.log('loaded controller');
+	
+	return {};
 
 }
