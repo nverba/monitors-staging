@@ -12,9 +12,10 @@ gulp.task('browser-sync', function() {
 });
 
 gulp.task('serve', ['build', 'sass', 'browser-sync'], function () {
+  
     gulp.watch('./src/**/**/*.scss', ['sass']);
     gulp.watch(["./src/**/**/*.js"], ['build', reload]);
-    gulp.watch(["./index.html"], [reload]);
+    gulp.watch(["./index.html", "./src/**/**/*.html"]).on('change', browserSync.reload);
     
     // gulp.watch(["./tests/**/*.js"], [reload]);
     // gulp.watch(["./tests/index.html"], [reload]);

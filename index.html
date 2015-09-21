@@ -14,8 +14,11 @@
 </head>
 <body ng-app='monitors' ng-controller="main as app">
   
+  <div ng-repeat="entry in app.log">
+    <div log-entry="entry"></div>
+  </div>
   <script src="https://storage.googleapis.com/code.getmdl.io/1.0.4/material.min.js"></script>
   <script src="dist/js/bundle.js"></script>
-  
+
 </body>
 </html>
