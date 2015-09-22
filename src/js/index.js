@@ -6,16 +6,19 @@ require('../components/monitor/directive.js');
 require('../components/ng-group/filter.js');
 
 angular.module('monitors', ['uptimeRobotService', 'googleSheetsService', 'logEntryDirective', 'systemMonitorDirective', 'ng.group']);
-angular.module('monitors').controller('main', ['fetchMonitors', 'fetchSheet', mainControllerFn]);
+angular.module('monitors').controller('main', ['fetchMonitors', 'fetchSheet', '$interval', mainControllerFn]);
 
-function mainControllerFn(fetchMonitors, fetchSheet) {
-
-	fetchMonitors().then(function(data) {  console.log(data);
-		this.monitors = data;
-	}.bind(this));
+function mainControllerFn(fetchMonitors, fetchSheet, $interval) {
 	
-	fetchSheet().then(function(res) { console.log('result', res);
-		this.log = res.reverse();
-	}.bind(this));
-
+	var fetchData = angular.bind(this, function() {  console.log('fetching data');
+		fetchMonitors().then(function(data) {  console.log(data);
+			this.monitors = data;
+		}.bind(this));
+		
+		fetchSheet().then(function(res) { console.log('result', res);
+			this.log = res.reverse();
+		}.bind(this));
+	});
+	fetchData();
+	$interval(fetchData, 30000);
 }
