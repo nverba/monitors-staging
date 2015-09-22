@@ -1,1 +1,19 @@
-{{ log.start | date : 'mediumDate' }}
+<div class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp log-entry">
+	<div class="mdl-card__title">
+		<h2 class="mdl-card__title-text">
+			<span ng-bind="log.service" class="service-title"></span>
+			<div class="log-times">
+				<span ng-bind="log.starttime | date : 'hh:mm'"></span> - 
+				<span ng-bind="log.endtime || 'Ongoing' | date : 'hh:mm'" ></span>
+			</div>
+		</h2>
+	</div>	
+	<div class="mdl-card__supporting-text" ng-if="log.issue">
+		<span>ISSUE:</span>
+  	<p ng-bind="log.issue"></p>
+  </div>
+	<div class="mdl-card__supporting-text" ng-if="log.resolution">
+		<span>RESOLUTION:</span>
+  	<p ng-bind="log.resolution"></p>
+  </div>
+</div>

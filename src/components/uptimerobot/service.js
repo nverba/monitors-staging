@@ -12,9 +12,13 @@ function monitorServiceFn($http, $q) {
 		let results = [];
 		
 		for (var index = 0; index < max; index++) {
-			results.push($http.get(`https://api.uptimerobot.com/getMonitors?apiKey=${ config.monitors[index] }&format=json&customUptimeRatio=7-30&noJsonCallback=1`));
+			results.push($http.get(`https://api.uptimerobot.com/getMonitors?apiKey=${ config.monitors[index] }&format=json&customUptimeRatio=7-14-30&noJsonCallback=1`));
 		}
 		
-		return $q.all(results);
+		return $q.all(results).then(function(monitors) {
+    	return monitors.map(function(monitor) {
+				return monitor.data.monitors.monitor[0];
+			});
+		});
 	};
 }

@@ -9,8 +9,6 @@ function logEntryFn() {
 		scope: { "log": "=logEntry" },
 		templateUrl: './src/components/log-entry/template.html',
 		link: function (scope, elem, attrs) {
-				
-			
 			
 		}
 	};

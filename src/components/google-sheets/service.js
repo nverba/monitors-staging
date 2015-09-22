@@ -9,6 +9,7 @@ function updateTime(date, time) {
 	var times = time.split(':');
 	date.setHours(times[0]);
 	date.setMinutes(times[1]);
+	return date;
 }
 
 function monitorServiceFn($http) {
@@ -31,13 +32,15 @@ function monitorServiceFn($http) {
 			obj.startdate = new Date(entry.title.$t);
 			
 			if (obj.starttime) {
-				updateTime(obj.startdate, obj.starttime);
+				let st = new Date(obj.startdate);
+				obj.starttime = updateTime(st, obj.starttime);
 			}
 			
 			if (obj.enddate) {
 				obj.enddate = new Date(obj.enddate);
 				if (obj.endtime) {
-					updateTime(obj.enddate, obj.endtime);
+					let et = new Date(obj.enddate);
+					obj.endtime = updateTime(et, obj.endtime);
 				}
 			}
 			

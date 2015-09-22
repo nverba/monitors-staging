@@ -1,0 +1,12 @@
+<div class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp log-entry">
+	<div class="mdl-card__title">
+		<h2 class="mdl-card__title-text">
+			<span ng-bind="monitor.friendlyname" class="service-title"></span>
+			<div class="log-times">
+				<span ng-bind="state_id[monitor.status]"></span> <i class="material-icons" ng-bind="ico[monitor.status]"></i>
+				<!--<span ng-bind="log.endtime || 'Ongoing' | date : 'hh:mm'" ></span>-->
+			</div>
+		</h2>
+	</div>
+	<!--<div class="mdl-card__supporting-text" ng-bind="log.issue"></div>-->
+</div>

@@ -1,22 +1,72 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="description" content="Make it Social service status">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Make it Social service status</title>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="Make it Social service status">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Make it Social service status</title>
 
-    <link href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.4/material.blue_grey-deep_orange.min.css" /> 
-
+  <link href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.4/material.blue_grey-deep_orange.min.css" />
+  <link rel="stylesheet" href="dist/css/style.css">
 </head>
 <body ng-app='monitors' ng-controller="main as app">
   
-  <div ng-repeat="entry in app.log">
-    <div log-entry="entry"></div>
+  <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+    <div class="android-header mdl-layout__header mdl-layout__header--waterfall">
+      <div class="mdl-layout__header-row">
+        <span class="android-title mdl-layout-title">
+          <img class="android-logo-image" src="images/mis-logo.png">
+        </span>
+        <!-- Add spacer, to align navigation to the right in desktop -->
+        <div class="android-header-spacer mdl-layout-spacer"></div>
+        <button class="android-more-button mdl-button mdl-js-button mdl-button--icon mdl-js-ripple-effect" id="more-button">
+          <i class="material-icons">more_vert</i>
+        </button>
+        <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="more-button">
+          <li class="mdl-menu__item">7 days</li>
+          <li class="mdl-menu__item">14 days</li>
+          <li class="mdl-menu__item">30 days</li>
+        </ul>
+        <span class="android-mobile-title mdl-layout-title">
+          <img class="android-logo-image" src="images/mis-logo.png">
+        </span>
+      </div>
+    </div>
+    
+    <div class="android-drawer mdl-layout__drawer">
+      <span class="mdl-layout-title">
+        <img class="android-logo-image" src="images/mis-logo.png">
+      </span>
+      <nav class="mdl-navigation">  
+        <a class="mdl-navigation__link" href="">MakeitSocial.com</a>
+        <a class="mdl-navigation__link" href="">Client dashboard</a>
+      </nav>
+    </div>
+    
+    <div class="android-content mdl-layout__content">
+    <a name="top"></a>
+    
+    <h3 class="logs-title">SERVICE STATUS</h3>
+    
+    <div ng-repeat="monitor in app.monitors" class="logs-container">
+      <div sys-monitor="monitor"></div>
+    </div>
+      
+    <h3 class="logs-title">INCIDENT LOGS</h3>
+      
+    <div ng-repeat="day in app.log | groupBy:'startdate':'entryiesByStartdate'" class="logs-container">
+      <h5 ng-bind="day.startdate | date : 'mediumDate'" class="day-date"></h5>
+      <div ng-repeat="log in day.items">
+        <div log-entry="log"></div>
+      </div>
+    </div>
   </div>
+  </div>
+  <a href="https://github.com/google/material-design-lite/blob/master/templates/android-dot-com/" target="_blank" id="view-source" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-color--accent mdl-color-text--accent-contrast">View Source</a>
+
   <script src="https://storage.googleapis.com/code.getmdl.io/1.0.4/material.min.js"></script>
   <script src="dist/js/bundle.js"></script>
 
