@@ -62,8 +62,8 @@
       <div ng-show="app.log" class="ng-hide mis-section">
         <h4 class="logs-title">Incident logs</h4>
           
-        <div ng-repeat="(key, day) in app.log | groupBy: 'date'" class="logs-container" ng-init="{{ newDate('key') }}">
-          <span ng-bind="date | date : 'mediumDate'" class="day-date"></span>
+        <div ng-repeat="(key, day) in app.log | groupBy: 'date'" class="logs-container">
+          <span ng-bind="key | asdate | date : 'mediumDate'" class="day-date"></span>
           <div ng-repeat="service in day | groupBy: 'service'">
             <div ng-repeat="log in service">
               <div log-entry="log"></div>

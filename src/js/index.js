@@ -8,6 +8,13 @@ require('../components/ng-filter/filter.js');
 angular.module('monitors', ['uptimeRobotService', 'googleSheetsService', 'logEntryDirective', 'systemMonitorDirective', 'angular.filter']);
 angular.module('monitors').controller('main', ['fetchMonitors', 'fetchSheet', '$interval', mainControllerFn]);
 
+// todo - move this to seperate component/module
+angular.module('monitors').filter('asdate', function() {
+  return function(input) {
+    return new Date(input);
+  };
+});
+
 function mainControllerFn(fetchMonitors, fetchSheet, $interval) {
 	
 	var fetchData = angular.bind(this, function() {  console.log('fetching data');
