@@ -49,18 +49,22 @@
     <div class="mis-content mdl-layout__content">
     <a name="top"></a>
     
-    <h4 class="logs-title">Service status</h4>
-    
-    <table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp monitor-table">
-      <tr ng-repeat="monitor in app.monitors" sys-monitor="monitor" class="logs-container"></tr>
-    </table>
-
-    <h4 class="logs-title">Incident logs</h4>
+    <div ng-show="app.monitors" class="ng-hide">
+      <h4 class="logs-title">Service status</h4>
       
-    <div ng-repeat="day in app.log | groupBy:'date':'entryiesByDate'" class="logs-container">
-      <span ng-bind="day.date | date : 'mediumDate'" class="day-date"></span>
-      <div ng-repeat="log in day.items">
-        <div log-entry="log"></div>
+      <table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp monitor-table">
+        <tr ng-repeat="monitor in app.monitors" sys-monitor="monitor" class="logs-container"></tr>
+      </table>
+    <div>
+
+    <div ng-show="app.log" class="ng-hide">
+      <h4 class="logs-title">Incident logs</h4>
+        
+      <div ng-repeat="day in app.log | groupBy:'date':'entryiesByDate'" class="logs-container">
+        <span ng-bind="day.date | date : 'mediumDate'" class="day-date"></span>
+        <div ng-repeat="log in day.items">
+          <div log-entry="log"></div>
+        </div>
       </div>
     </div>
   </div>

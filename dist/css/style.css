@@ -1,6 +1,9 @@
 body {
   background-color: #FBFAFF; }
 
+.ng-hide {
+  display: none; }
+
 .monitor-table, .logs-title, .log-entry, .day-date {
   max-width: 900px;
   width: 100%;
