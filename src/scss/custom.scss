@@ -1,6 +1,10 @@
 // Custom MiS Styles
 
-.monitor-table, .logs-title {
+body {
+  background-color: #FBFAFF;
+}
+
+.monitor-table, .logs-title, .log-entry, .day-date {
   max-width: 900px;
   width: 100%;
   margin: 0 auto;
@@ -9,15 +13,14 @@
 .day-date {
   display: block;
   width: 100%;
-  padding-left: 10%;
-  border-bottom: 1px solid #ECE4E4;
+  padding: 22px;
+  border-top: 1px solid #ECE4E4;
   padding-bottom: 22px;
-  color: #CEC7C7;
-}
+  color: #969191;
+  font-family: Roboto, Helvetica, Arial, sans-serif;
+  font-size: 24px;
+  font-weight: 300;
 
-.log-entry {
-  width: 80%;
-  max-width: 900px;
 }
 
 .log-entry div, .log-entry div h2 {
@@ -30,22 +33,33 @@
 }
 
 .service-title {
-  width: 50%;
+  padding-right: 35px;
 }
 
 .logs-title {
-  border-bottom: 1px solid #ECE4E4;
+  border-top: 1px solid #ECE4E4;
   padding: 22px;
-  margin-bottom: 35px;
+  margin-top: 35px;
   text-align: left;
+}
+
+.log-text {
+  font-size: 13px;
+  white-space: nowrap;
+}
+
+.log-msg {
+  width: 100%;
+}
+
+.log-entry {
+  margin-bottom: 35px;
+  background-color: #fff;
 }
 
 /**** Mobile layout ****/
 @media (max-width: 900px) {
-  
-.day-date {
-  padding-left: 1%;
-}
+
   
 .log-entry {
   width: 100%;

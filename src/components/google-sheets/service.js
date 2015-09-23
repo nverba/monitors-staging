@@ -18,7 +18,7 @@ function monitorServiceFn($http) {
 		return $http.get(goog).then(sheetTransformFn);
 	};
 
-	function sheetTransformFn(res) { //console.log(res);
+	function sheetTransformFn(res) { console.log(res);
 		
 		return res.data.feed.entry.map(function(entry) {
 			
@@ -29,19 +29,11 @@ function monitorServiceFn($http) {
 				obj[arr[0]] = arr[1];
 			});
 	
-			obj.startdate = new Date(entry.title.$t);
+			obj.date = new Date(entry.title.$t);
 			
-			if (obj.starttime) {
-				let st = new Date(obj.startdate);
-				obj.starttime = updateTime(st, obj.starttime);
-			}
-			
-			if (obj.enddate) {
-				obj.enddate = new Date(obj.enddate);
-				if (obj.endtime) {
-					let et = new Date(obj.enddate);
-					obj.endtime = updateTime(et, obj.endtime);
-				}
+			if (obj.time) {
+				let t = new Date(obj.date);
+				obj.time = updateTime(t, obj.time);
 			}
 			
 			return obj;

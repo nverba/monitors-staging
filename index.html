@@ -57,8 +57,8 @@
 
     <h4 class="logs-title">Incident logs</h4>
       
-    <div ng-repeat="day in app.log | groupBy:'startdate':'entryiesByStartdate'" class="logs-container">
-      <h5 ng-bind="day.startdate | date : 'mediumDate'" class="day-date"></h5>
+    <div ng-repeat="day in app.log | groupBy:'date':'entryiesByDate'" class="logs-container">
+      <span ng-bind="day.date | date : 'mediumDate'" class="day-date"></span>
       <div ng-repeat="log in day.items">
         <div log-entry="log"></div>
       </div>
