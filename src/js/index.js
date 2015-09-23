@@ -6,7 +6,7 @@ require('../components/monitor/directive.js');
 require('../components/ng-filter/filter.js');
 
 angular.module('monitors', ['uptimeRobotService', 'googleSheetsService', 'logEntryDirective', 'systemMonitorDirective', 'angular.filter']);
-angular.module('monitors').controller('main', ['fetchMonitors', 'fetchSheet', '$interval', mainControllerFn]);
+angular.module('monitors').controller('main', ['fetchMonitors', 'fetchSheet', '$interval', '$location', mainControllerFn]);
 
 // todo - move this to seperate component/module
 angular.module('monitors').filter('asdate', function() {
@@ -15,7 +15,7 @@ angular.module('monitors').filter('asdate', function() {
   };
 });
 
-function mainControllerFn(fetchMonitors, fetchSheet, $interval) {
+function mainControllerFn(fetchMonitors, fetchSheet, $interval, $location) {
 	
 	var fetchData = angular.bind(this, function() {  console.log('fetching data');
 		fetchMonitors().then(function(data) {  console.log(data);
@@ -26,8 +26,11 @@ function mainControllerFn(fetchMonitors, fetchSheet, $interval) {
 			this.log = res.reverse();
 		}.bind(this));
 	});
+	
 	fetchData();
-	//$interval(fetchData, 30000);
+	if ($location.host() !== 'localhost') {
+		$interval(fetchData, 30000);
+	}
 	
 	this.newDate = function(date) {
 		
