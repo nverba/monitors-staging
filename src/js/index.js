@@ -3,9 +3,9 @@ require('../components/uptimerobot/service.js');
 require('../components/google-sheets/service.js');
 require('../components/log-entry/directive.js');
 require('../components/monitor/directive.js');
-require('../components/ng-group/filter.js');
+require('../components/ng-filter/filter.js');
 
-angular.module('monitors', ['uptimeRobotService', 'googleSheetsService', 'logEntryDirective', 'systemMonitorDirective', 'ng.group']);
+angular.module('monitors', ['uptimeRobotService', 'googleSheetsService', 'logEntryDirective', 'systemMonitorDirective', 'angular.filter']);
 angular.module('monitors').controller('main', ['fetchMonitors', 'fetchSheet', '$interval', mainControllerFn]);
 
 function mainControllerFn(fetchMonitors, fetchSheet, $interval) {
@@ -21,4 +21,11 @@ function mainControllerFn(fetchMonitors, fetchSheet, $interval) {
 	});
 	fetchData();
 	//$interval(fetchData, 30000);
+	
+	this.newDate = function(date) {
+		
+		console.log(date);
+		
+		return new Date(date);	
+	};
 }
