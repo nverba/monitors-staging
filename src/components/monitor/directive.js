@@ -12,6 +12,7 @@ function sysMonitorFn() {
 			
 			
 			scope.state_id = {
+				
 				"0": "paused",
 				"1": "not checked yet",
 				"2": "up",
@@ -25,7 +26,6 @@ function sysMonitorFn() {
 				"2": "check",
 				"8": "error",
 				"9": "warninng"
-				
 			};
 			
 		}
