@@ -49,13 +49,13 @@
     <div class="mis-content mdl-layout__content">
     <a name="top"></a>
     
-    <h3 class="logs-title">SERVICE STATUS</h3>
+    <h4 class="logs-title">Service status</h4>
     
-    <div ng-repeat="monitor in app.monitors" class="logs-container">
-      <div sys-monitor="monitor"></div>
-    </div>
-      
-    <h3 class="logs-title">INCIDENT LOGS</h3>
+    <table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp monitor-table">
+      <tr ng-repeat="monitor in app.monitors" sys-monitor="monitor" class="logs-container"></tr>
+    </table>
+
+    <h4 class="logs-title">Incident logs</h4>
       
     <div ng-repeat="day in app.log | groupBy:'startdate':'entryiesByStartdate'" class="logs-container">
       <h5 ng-bind="day.startdate | date : 'mediumDate'" class="day-date"></h5>
