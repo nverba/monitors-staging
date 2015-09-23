@@ -8,7 +8,7 @@ body {
   display: none;
 }
 
-.monitor-table, .logs-title, .log-entry, .day-date {
+.monitor-table, .logs-title, .log-entry, .day-date , hr {
   max-width: 900px;
   width: 100%;
   margin: 0 auto;
@@ -38,12 +38,11 @@ body {
 
 .service-title {
   padding-right: 35px;
+  margin-left: 70px;
 }
 
 .logs-title {
-  border-top: 1px solid #ECE4E4;
   padding: 22px;
-  margin-top: 35px;
   text-align: left;
 }
 
@@ -57,16 +56,57 @@ body {
 }
 
 .log-entry {
+  position: relative;
   margin-bottom: 35px;
   background-color: #fff;
+}
+
+.mis-section {
+  padding-bottom: 35px;
+} 
+
+.log-entry:after {
+  content: '';
+  position: absolute;
+  left: 25px;
+  top: 100%;
+  background-color: #398B9A;
+  width: 5px;
+  height: 35px;
+  box-shadow: 1px 1px 1px #C7C7C7;
+}
+
+.log-entry.new:after {
+  content: none;
+}
+
+hr {
+  border-top: 1px solid #ECE4E4;
+  max-width: 944px;
+}
+
+.log-entry .material-icons {
+  font-size: 24px;
+  position: absolute;
+  top: 11px;
+}
+
+.red {
+  color: #DF5A49;
+}
+
+.green {
+  color: #6ab344;
+}
+
+.yellow {
+  color: #EFC94C;
 }
 
 /**** Mobile layout ****/
 @media (max-width: 900px) {
 
-  
-.log-entry {
-  width: 100%;
-}
-
+ .log-entry {
+    width: 100%;
+  }
 }

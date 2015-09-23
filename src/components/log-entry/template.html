@@ -1,6 +1,10 @@
-<div class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp log-entry">
+<div class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp log-entry" ng-class="{ 'new': log.type === 'new' }">
 	<div class="mdl-card__title">
 		<div class="mdl-card__title-text log-text">
+			<i ng-if="log.type === 'new'" class="material-icons red"">error</i>
+			<i ng-if="log.type === 'update'" class="material-icons yellow"">feedback</i>
+			<i ng-if="log.type === 'resolved'" class="material-icons green">thumb_up</i>
+			<i ng-if="log.type === 'maintenance'" class="material-icons yellow">build</i>
 			<span ng-bind="log.service" class="service-title"></span> 
 			<span ng-bind="log.message" class="log-msg"></span>
 			<div class="log-times">

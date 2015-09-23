@@ -273,11 +273,11 @@ a img{
   }
 
 
-.mis-tablet {
-  display: inline-block;
-  width: 110px;
-  margin-right: 64px;
-}
+  .mis-tablet {
+    display: inline-block;
+    width: 110px;
+    margin-right: 64px;
+  }
 
   .mis-tablet .mis-screen-image {
     width: 100%;
@@ -290,23 +290,23 @@ a img{
   }
 
 
-.mis-tv {
-  display: inline-block;
-  width: 300px;
-  margin-right: 80px;
-}
+  .mis-tv {
+    display: inline-block;
+    width: 300px;
+    margin-right: 80px;
+  }
 
   .mis-tv .mis-screen-image {
     width: 100%;
     z-index: 1;
   }
 
-
-.mis-auto {
-  display: inline-block;
-  width: 300px;
-  overflow: hidden;
-}
+  
+  .mis-auto {
+    display: inline-block;
+    width: 300px;
+    overflow: hidden;
+  }
 
   .mis-auto .mis-screen-image {
     display: block;
@@ -315,37 +315,37 @@ a img{
   }
 
 
-.mis-wear-section {
-  position: relative;
-  background: url('images/wear.png') center top no-repeat;
-  background-size: cover;
-  height: 800px;
-}
+  .mis-wear-section {
+    position: relative;
+    background: url('images/wear.png') center top no-repeat;
+    background-size: cover;
+    height: 800px;
+  }
+  
+  .mis-wear-band {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    background-color: #37474f;
+  }
 
-.mis-wear-band {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  text-align: center;
-  background-color: #37474f;
-}
-
-.mis-wear-band-text {
-  max-width: 800px;
-  margin-left: 25%;
-  padding: 24px;
-  text-align: left;
-  color: white;
-}
+  .mis-wear-band-text {
+    max-width: 800px;
+    margin-left: 25%;
+    padding: 24px;
+    text-align: left;
+    color: white;
+  }
 
   .mis-wear-band-text p {
     padding-top: 8px;
   }
 
-.mis-link {
-  text-decoration: none;
-  color: #8bc34a !important;
-}
+  .mis-link {
+    text-decoration: none;
+    color: #8bc34a !important;
+  }
 
   .mis-link:hover {
     color: #7cb342 !important;
@@ -356,11 +356,11 @@ a img{
     top: 6px;
   }
 
-.mis-alt-link {
-  text-decoration: none;
-  color: #64ffda !important;
-  font-size: 16px;
-}
+  .mis-alt-link {
+    text-decoration: none;
+    color: #64ffda !important;
+    font-size: 16px;
+  }
 
   .mis-alt-link:hover {
     color: #00bfa5 !important;
@@ -371,41 +371,38 @@ a img{
     top: 6px;
   }
 
-.mis-customized-section {
-  text-align: center;
-}
-
-.mis-customized-section-text {
-  max-width: 500px;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 80px 16px 0 16px;
-}
+  .mis-customized-section {
+    text-align: center;
+  }
+  
+  .mis-customized-section-text {
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 80px 16px 0 16px;
+  }
 
   .mis-customized-section-text p {
     padding-top: 16px;
   }
 
-.mis-customized-section-image {
-  background: url('images/devices.jpg') center top no-repeat;
-  background-size: cover;
-  height: 400px;
-}
-
-.mis-more-section {
-  padding: 80px 0;
-  max-width: 1044px;
-  margin-left: auto;
-  margin-right: auto;
-}
+  .mis-customized-section-image {
+    background: url('images/devices.jpg') center top no-repeat;
+    background-size: cover;
+    height: 400px;
+  }
+  
+  .mis-more-section {
+    padding: 80px 0;
+    max-width: 1044px;
+    margin-left: auto;
+    margin-right: auto;
+  }
 
   .mis-more-section .mis-section-title {
     margin-left: 12px;
     padding-bottom: 24px;
   }
-
-.mis-card-container {
-}
   
   .mis-card-container .mdl-card__media {
     overflow: hidden;
@@ -443,10 +440,10 @@ a img{
     font-size: 16px;
   }
 
-.mis-footer {
-  background-color: #fafafa;
-  position: relative;
-}
+  .mis-footer {
+    background-color: #fafafa;
+    position: relative;
+  }
 
   .mis-footer a:hover {
     color: #8bc34a;
@@ -474,11 +471,9 @@ a img{
   }
 
 
-.mis-link-menu:hover {
-  cursor: pointer;
-}
-
-
+  .mis-link-menu:hover {
+    cursor: pointer;
+  }
 
 
 /**** Mobile layout ****/

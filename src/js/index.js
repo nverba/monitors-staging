@@ -20,5 +20,5 @@ function mainControllerFn(fetchMonitors, fetchSheet, $interval) {
 		}.bind(this));
 	});
 	fetchData();
-	$interval(fetchData, 30000);
+	//$interval(fetchData, 30000);
 }
