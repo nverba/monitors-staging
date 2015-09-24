@@ -1,14 +1,14 @@
 {
 	"monitors": [
-		"m777091916-4eb27a14ed3545233a8d5b91", // Client
-		"m777091914-646a859e24b88474997640bb", // Client sndbx
+//		"m777091916-4eb27a14ed3545233a8d5b91", // Client
+//		"m777091914-646a859e24b88474997640bb", // Client sndbx
 		"m777092298-434ff01ac497acde6f864de7", // GAPI
 		"m777092304-b4fe21c6e7c40052251e7bf2", // GAPI sndbx
 		"m777092331-bc6e005ef932b7d4874d1454", // GAPI-PAY
 		"m777092313-e843725b9c75957f8cf8188b", // GBM
 		"m777092308-3e8b513c3411a08ddadbdae3", // GBM sndbx
-		"m777092332-69ea173c1b59eb0e0eb1ec00", // mis-ana 
-		"m777092353-242508e73e13b3a414829639", // mis.com
+//		"m777092332-69ea173c1b59eb0e0eb1ec00", // mis-ana 
+//		"m777092353-242508e73e13b3a414829639", // mis.com
 		"m777092291-49cfad9ea760ed37ab2d6cdd", // PAPI
 		"m777092286-b11723c38fc6e5fd57680780", // PAPI sndbx
 		"m777092326-6349d62eca6aa0d7fdfbc52c", // Popup
