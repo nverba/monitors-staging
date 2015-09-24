@@ -1,6 +1,6 @@
 ## Template customisation
 
-The monitors page uses material design lite for templating, and can use material icons or any icons from fontello.com if needed.
+The monitors page uses [material design lite](http://www.getmdl.io/) for templating, and can use [material icons](https://www.google.com/design/icons/) or any icons from [fontello.com](http://fontello.com/) if needed.
 
 __NOTE: Do not edit contents of the `dist` folder, as this will be overwritten by the build process. If possible, follow the instructions bellow. If not, simply edit & save the `src/scss/custom.scss` file__
 
