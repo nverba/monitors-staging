@@ -11,6 +11,8 @@ function sysMonitorFn() {
 		link: function (scope, elem, attrs) {
 			
 			
+		console.log('monitor', scope.monitor, 'ting');
+			
 			scope.state_id = {
 				
 				"0": "paused",
@@ -18,6 +20,7 @@ function sysMonitorFn() {
 				"2": "up",
 				"8": "seems down",
 				"9": "down"
+				
 			};
 			
 			scope.ico = {

@@ -1,2 +1,7 @@
 <td class="mdl-data-table__cell--non-numeric"><span ng-bind="monitor.friendlyname"></span></td>
-<td ng-bind="state_id[monitor.status]"></td>
+<td>
+	<span  ng-bind="state_id[monitor.status]" class="monitor-state" ng-class="'col-' + monitor.status"></span>
+	<button class="mis-more-button mdl-button mdl-js-button mdl-button--icon mdl-js-ripple-effect info-btn" ng-click="$parent.info = !$parent.info" >
+		<i class="material-icons">more_vert</i>
+	</button>
+</td>

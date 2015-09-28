@@ -9,7 +9,6 @@
 
   <link href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en" rel="stylesheet">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.4/material.blue_grey-deep_orange.min.css" />
   <link rel="stylesheet" href="dist/css/style.css">
 </head>
 <body ng-app='monitors' ng-controller="main as app">
@@ -53,7 +52,8 @@
         <h4 class="logs-title">Service status</h4>
         
         <table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp monitor-table">
-          <tr ng-repeat="monitor in app.monitors" sys-monitor="monitor" class="logs-container"></tr>
+          <tr ng-repeat-start="monitor in app.monitors" sys-monitor="monitor" class="logs-container" ng-class="{ info: info }" ng-init="info = false" ></tr>
+          <tr ng-repeat-end monitor-info="monitor" class="logs-container info-row"></tr>
         </table>
       </div>
       
@@ -75,7 +75,7 @@
   </div>
 
   <script src="https://storage.googleapis.com/code.getmdl.io/1.0.4/material.min.js"></script>
-  <script src="dist/js/bundle.min.js"></script>
+  <script src="dist/js/bundle.js"></script>
 
 </body>
 </html>

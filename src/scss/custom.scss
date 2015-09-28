@@ -91,16 +91,49 @@ hr {
   top: 11px;
 }
 
-.red {
+.red, .col-8, .col-9 {
   color: #DF5A49;
 }
 
-.green {
+.green, .col-2 {
   color: #6ab344;
 }
 
-.yellow {
+.yellow, .col-0, .col-1 {
   color: #EFC94C;
+}
+
+.monitor-state {
+  margin-right: 20px; 
+}
+
+.info-btn { 
+  position: absolute;
+  right: 4px;
+  top: 7px;
+}
+
+tbody tr.info-row, tbody tr.info-row td {
+  height: 0;
+  padding: 0;
+  overflow: hidden;
+  border-top: 1px solid rgba(0, 0, 0, 0);
+  transition: height 1s;
+}
+
+.mdl-data-table td {
+  border-bottom: 0px solid rgba(0, 0, 0, 0);
+}
+
+tr.info + tr {
+  height: 300px;
+  border-top: 1px solid rgba(0, 0, 0, 0.11);
+}
+
+.info-content {
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
 /**** Mobile layout ****/
