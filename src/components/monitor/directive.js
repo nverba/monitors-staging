@@ -10,9 +10,6 @@ function sysMonitorFn() {
 		templateUrl: './src/components/monitor/template.html',
 		link: function (scope, elem, attrs) {
 			
-			
-		console.log('monitor', scope.monitor, 'ting');
-			
 			scope.state_id = {
 				
 				"0": "paused",

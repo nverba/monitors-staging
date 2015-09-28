@@ -18,12 +18,12 @@ angular.module('monitors').filter('asdate', function() {
 
 function mainControllerFn(fetchMonitors, fetchSheet, $interval, $location) {
 	
-	var fetchData = angular.bind(this, function() {  console.log('fetching data');
-		fetchMonitors().then(function(data) {  console.log(data);
+	var fetchData = angular.bind(this, function() { // console.log('fetching data');
+		fetchMonitors().then(function(data) { // console.log(data);
 			this.monitors = data;
 		}.bind(this));
 		
-		fetchSheet().then(function(res) { console.log('result', res);
+		fetchSheet().then(function(res) { // console.log('result', res);
 			this.log = res.reverse();
 		}.bind(this));
 	});
@@ -32,11 +32,4 @@ function mainControllerFn(fetchMonitors, fetchSheet, $interval, $location) {
 	if ($location.host() !== 'localhost') {
 		$interval(fetchData, 30000);
 	}
-	
-	this.newDate = function(date) {
-		
-		console.log(date);
-		
-		return new Date(date);	
-	};
 }

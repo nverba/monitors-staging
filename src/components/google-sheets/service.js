@@ -18,7 +18,7 @@ function monitorServiceFn($http) {
 		return $http.get(goog).then(sheetTransformFn);
 	};
 
-	function sheetTransformFn(res) { console.log(res);
+	function sheetTransformFn(res) { // console.log(res);
 		
 		return res.data.feed.entry.map(function(entry) {
 			
