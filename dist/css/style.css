@@ -5843,10 +5843,32 @@ tbody tr.info-row, tbody tr.info-row td {
 tr.info + tr {
   height: 300px; }
 
+ul {
+  padding: 0; }
+
 .info-content {
   position: absolute;
   top: 0;
-  left: 0; }
+  left: 0;
+  right: 0; }
+
+.incidents-log {
+  padding: 0;
+  width: 230px;
+  height: 220px;
+  overflow-y: scroll; }
+
+.outages li {
+  width: 170px;
+  border: 1px solid grey;
+  margin: 4px;
+  border-radius: 3px;
+  padding: 1px 6px; }
+
+.availability {
+  position: absolute;
+  top: 20px;
+  right: 50px; }
 
 .info-content ul {
   list-style: none; }

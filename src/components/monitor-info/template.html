@@ -4,12 +4,20 @@
 		<ul class="incidents-log">
 			<li ng-repeat="(day, times) in incidents | groupBy: 'day'">
 				<span ng-bind="day | asdate | date : 'mediumDate'"></span>
-				<ul>
+				<ul class="outages">
 					<li ng-repeat="log in times">
 						<span ng-bind="log.starttime | date : 'shortTime'" ></span> for {{ log.endtime | amDifference : log.starttime | amDurationFormat }}
 					</li>
 				</ul>
 			</li>
 		</ul>
+		<div class="availability" ng-init="uptime=1">
+			<div class="" ng-bind="'Availability: ' + uptimes[uptime] + '%'"></div>
+			<button ng-click="uptime=1">24hr</button>
+			<button ng-click="uptime=2">48hr</button>
+			<button ng-click="uptime=7">1 week</button>
+			<button ng-click="uptime=14">2 weeks</button>
+			<button ng-click="uptime=30">30 days</button>
+		</div>
 	</div>
 </td>
