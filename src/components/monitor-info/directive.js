@@ -10,8 +10,6 @@ function monitorInfoFn() {
 		templateUrl: './src/components/monitor-info/template.html',
 		link: function (scope, elem, attrs) {
 			
-			console.log(scope.monitor);
-			
 			scope.uptimes = {};
 			var upkey = [1, 2, 7, 14, 30];
 			var splituptime =  scope.monitor.customuptimeratio.split('-');

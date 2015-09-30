@@ -113,6 +113,10 @@ hr {
   top: 7px;
 }
 
+.info-row {
+  background-color: #eee;
+}
+
 tbody tr.info-row, tbody tr.info-row td {
   height: 0;
   padding: 0;
@@ -162,6 +166,17 @@ ul {
     margin: 4px;
     border-radius: 3px;
     padding: 1px 6px;
+}
+
+.response-monitor {
+  text-align: center;
+  border: 1px solid grey;
+  border-radius: 3px;
+  margin: 3px;
+}
+
+.response-monitor span {
+  width: 100%;
 }
 
 .availability {
