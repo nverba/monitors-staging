@@ -1,5 +1,15 @@
 <td  colspan="2">
 	<div class="info-content">
-		Hi template content
+		RECENT INCIDENTS:
+		<ul class="incidents-log">
+			<li ng-repeat="(day, times) in incidents | groupBy: 'day'">
+				<span ng-bind="day | asdate | date : 'mediumDate'"></span>
+				<ul>
+					<li ng-repeat="log in times">
+						<span ng-bind="log.starttime | date : 'shortTime'" ></span> for {{ log.endtime | amDifference : log.starttime | amDurationFormat }}
+					</li>
+				</ul>
+			</li>
+		</ul>
 	</div>
 </td>

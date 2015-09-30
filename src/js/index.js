@@ -1,4 +1,7 @@
 require('angular');
+require('moment');
+require('angular-moment');
+
 require('../components/uptimerobot/service.js');
 require('../components/google-sheets/service.js');
 require('../components/log-entry/directive.js');
@@ -6,7 +9,7 @@ require('../components/monitor/directive.js');
 require('../components/ng-filter/filter.js');
 require('../components/monitor-info/directive.js');
 
-angular.module('monitors', ['uptimeRobotService', 'googleSheetsService', 'logEntryDirective', 'systemMonitorDirective', 'monitorInfoDirective', 'angular.filter']);
+angular.module('monitors', ['uptimeRobotService', 'googleSheetsService', 'logEntryDirective', 'systemMonitorDirective', 'monitorInfoDirective', 'angular.filter', 'angularMoment']);
 angular.module('monitors').controller('main', ['fetchMonitors', 'fetchSheet', '$interval', '$location', mainControllerFn]);
 
 // todo - move this to seperate component/module

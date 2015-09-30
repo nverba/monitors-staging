@@ -5826,11 +5826,19 @@ tbody tr.info-row, tbody tr.info-row td {
   padding: 0;
   overflow: hidden;
   border-top: 0px solid transparent;
-  -webkit-transition: all 1s;
-          transition: all 1s; }
+  -webkit-transition: all 0.3s;
+          transition: all 0.3s; }
 
 .mdl-data-table td {
   border-bottom: 0px solid transparent; }
+
+.info-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 20px;
+  color: grey;
+  text-align: left; }
 
 tr.info + tr {
   height: 300px; }
@@ -5839,6 +5847,12 @@ tr.info + tr {
   position: absolute;
   top: 0;
   left: 0; }
+
+.info-content ul {
+  list-style: none; }
+
+.incidents-log {
+  color: #DF5A49; }
 
 /**** Mobile layout ****/
 @media (max-width: 900px) {
